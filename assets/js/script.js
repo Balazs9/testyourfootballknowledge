@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 let questType = this.getAttribute("question-container");
                 startFootball(questType);
             }
-        })
+        });
     }
     document.getElementById('btn').addEventListener('keydown', function(event) {
         if(event.key === "Enter") {
             checkAnswer();
         }
-    })
+    });
     startFootball(question);
 },
 
@@ -38,38 +38,15 @@ function startFootball() {
 
 
 },
-function handleQuestions (){
-    let shuffledQuestions = [];
-    while (shuffledQuestions.length <= 20) {
-        let random = questions[Math.floor(Math.random() * questions.length)]
-        if (!shuffledQuestions.includes(random)) {
-            shuffledQuestions.push(random)
-        }
-    }
-},
 
-function setNextQuestion(questions) {
-    resetState();
-    let answerElement = document.getElementById('answer-buttons')
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        let button = document.createElement('button');
-        button.innerText = answer.text;
-        if (answer.correct) {
-            alert("Hey! well done!");
-        }
-        else {
-            alert("Sorry, wrong answer!")
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-    })
-    
-},
-
-function selectAnswer() {
+function checkAnswer() {
 
 },
+
+function correctAnswer() {
+
+},
+
 /**
  * gets the current score from DOM and increment by 1
  */
@@ -85,7 +62,7 @@ function incrementWrongAnswer(){
         document.getElementById('incorrect').innerText = ++oldScore; 
 },
 
-let questions = [
+var questions = [
     {
         question: "Which team won the World Cup in 1938?",
 
@@ -108,4 +85,4 @@ let questions = [
         },
         correctAnswer: 'a'
     }
-]
+];
