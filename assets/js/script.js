@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function) {
+document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
         for (let button of buttons) {
-            button.addEventListener('click', function) {
+            button.addEventListener('click', function() {
                 if (this.getAttribute("data-type") === "submit") {
                     showQuestions();
                 }
@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function) {
                     let questType = this.getAttribute("data-type");
                     showQuestions(questType);
                 }
-            }
+            })
         }
     document.getElementById
-}
+})
 function generateQuestion(questions, quizBox, resultsBox, submitButton) {
 
     function showQuestions(questions, quizBox) {
@@ -86,12 +86,16 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                 },
                 correctAnswer: 'a'
             }
-        ]
-        let questions= ['question'];
+        ];
+        let output = [];
         let answers;
         }
         
     }
+
+    let quizBox = document.getElementsByClassName('questions');
+    let resultsBox = document.getElementById('answers');
+    let submitButton = document.getElementById('submit');
 
     function showresults(questions, quizBox, resultsBox) {
         let gamerAnswer = document.getElementById()

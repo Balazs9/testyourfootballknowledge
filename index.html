@@ -37,27 +37,25 @@
     </header>
 
     <section>
-    <div id="quiz" class="container">
-        <div class="quizBox">
-            <button id="start" class="button">Kick off!</button>
-
-        </div>
-    </div>
-    <div>
-        <div class="questions" class="box">
-            <div id="question-box">
-                <h2 class="quest"></h2>
+        <div class="container">
+            <div id="question-container" class="hide">
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer1</button>
+                    <button class="btn">Answer2</button>
+                    <button class="btn">Answer3</button>
+                    <button class="btn">Answer4</button>
+                </div>
             </div>
-            <div class="answer" class="box2">
-                <div id="answers"></div>
-                <div id="results"></div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="start-btn btn hide">Next</button>
             </div>
-        </div>
-        <div class="score-section">
-            <p class="scores">Correct <span id="score">0</span></p>
-            <p class="scores">Wrong <span id="score">0</span>
-        </div>
-    </div>
+            <div class="score-section">
+                    <p class="scores">Correct <span id="score">0</span></p>
+                    <p class="scores">Wrong <span id="score">0</span>
+            </div>
+        </div>    
     </section>
     <script src="assets/js/script.js"></script>
 </body>
