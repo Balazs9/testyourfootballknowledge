@@ -1,4 +1,5 @@
 let startButton = document.getElementById('start-btn');
+let nextButton = document.getElementById('next-btn');
 let questionContainer = document.getElementById('question-container');
 let questionElement = document.getElementById('questions')
 let answerElement = document.getElementById('answer-button')
@@ -13,6 +14,7 @@ function startFootball() {
 }
 
 function setNextQuestion(questions) {
+    resetState();
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
         let button = document.createElement('button');
@@ -23,10 +25,16 @@ function setNextQuestion(questions) {
         else {
             alert("Sorry, wrong answer!")
         }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
     })
     
 }
-
+function resetState() {
+    while (answerButtonsElement.firstChild {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+}
 function selectAnswer() {
 
 }
