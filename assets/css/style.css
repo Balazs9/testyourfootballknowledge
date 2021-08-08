@@ -1,0 +1,20 @@
+/* -------------------- Body style ---- */
+
+body {
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+    color: #201e1d;
+    text-align: center;
+}
+
+/* --------------------  Heading ---- */
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.logo {
+    height: 50px;
+    padding-right: 10px;
+}
