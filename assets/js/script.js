@@ -25,16 +25,24 @@ let nextButton = document.getElementById('next-btn');
 let questionContainer = document.getElementById('question-container');
 let questionElement = document.getElementById('questions')
 let answerElement = document.getElementById('answer-button')
-
+let shuffledQuestions = [];
 startButton.addEventListener('click', startButton);
 let showQuestions = questions.length;
+
 function startFootball() {
     console.log('started');
     setNextQuestion();
 
 
 }
-
+function handleQuestions (){
+    while (shuffledQuestions.length <= 20) {
+        let random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
 function setNextQuestion(questions) {
     resetState();
     questionElement.innerText = question.question;
