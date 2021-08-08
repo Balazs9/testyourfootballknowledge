@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function) {
+    let buttons = document.getElementsByTagName("button");
+
+        for (let button of buttons) {
+            button.addEventListener('click', function) {
+                if (this.getAttribute("data-type") === "submit") {
+                    showQuestions();
+                }
+                else {
+                    let questType = this.getAttribute("data-type");
+                    showQuestions(questType);
+                }
+            }
+        }
+    document.getElementById
+}
 function generateQuestion(questions, quizBox, resultsBox, submitButton) {
 
     function showQuestions(questions, quizBox) {
@@ -13,10 +29,10 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                     c: 'Spain',
                 },
                 correctAnswer: 'a'
-            }
+            },
 
             {
-                questions: "Which team won the Champions League in 1994?",
+                question: "Which team won the Champions League in 1994?",
 
                 answers: {
                     a: 'Barcelona',
@@ -24,10 +40,10 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                     c: 'Milan',
                 },
                 correctAnswer: 'c'
-            }
+            },
 
             {
-                questions: "Who won the Ballon D'or in 2003?",
+                question: "Who won the Ballon D'or in 2003?",
 
                 answers: {
                     a: 'Pavel Nedved',
@@ -36,10 +52,10 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
 
                 },
                 correctAnswer: 'a'
-            }
+            },
 
             {
-                questions: "Which 2 team played the Champions League final in 1996?",
+                question: "Which 2 team played the Champions League final in 1996?",
 
                 answers: {
                     a: 'Real Madrid and Ajax',
@@ -47,10 +63,10 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                     c: 'Monaco and Manchester United',
                 },
                 correctAnswer: 'b'
-            }
+            },
 
             {
-                questions: "Where did Cristiano Ronaldo play in 2003?",
+                question: "Where did Cristiano Ronaldo play in 2003?",
 
                 answers: {
                     a: 'Manchester United',
@@ -58,10 +74,10 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                     c: 'Real Madrid',
                 },
                 correctAnswer: 'a'
-            }
+            },
 
             {
-                questions: "Which sportbrand was the sponsor of Paulo Dybala at 2015?",
+                question: "Which sportbrand was the sponsor of Paulo Dybala at 2015?",
 
                 answers: {
                     a: 'Nike',
@@ -71,15 +87,14 @@ function generateQuestion(questions, quizBox, resultsBox, submitButton) {
                 correctAnswer: 'a'
             }
         ]
-        let output = [];
+        let questions= ['question'];
         let answers;
-
-        if ()
-
+        }
+        
     }
 
     function showresults(questions, quizBox, resultsBox) {
-
+        let gamerAnswer = document.getElementById()
     }
 
     // show the questions
