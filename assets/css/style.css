@@ -84,3 +84,27 @@ body {
     margin: 25px 0;
     border-radius: 8px;
 }
+
+.btn {
+    border-radius: 8px;
+    background-color: #858585;
+    color: white;
+    padding: 5px 10px;
+}
+.btn:hover {
+    border-color: black;
+}
+.start-btn, .next-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin: 10px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
+}
