@@ -7,14 +7,24 @@ startButton.addEventListener('click', startButton);
 let showQuestions = questions.length;
 function startFootball() {
     console.log('started');
-    setNextQuestion()
+    setNextQuestion();
 
 
 }
 
 function setNextQuestion(questions) {
-    showQuestions;
-
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        if (answer.correct) {
+            alert("Hey! well done!");
+        }
+        else {
+            alert("Sorry, wrong answer!")
+        }
+    })
+    
 }
 
 function selectAnswer() {
