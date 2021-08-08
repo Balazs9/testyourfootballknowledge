@@ -87,14 +87,17 @@ body {
 
 .btn {
     border-radius: 8px;
-    background-color: #858585;
+    background-color: rgba(60, 60, 60, 0.6);
     color: white;
     padding: 5px 10px;
 }
+.btn:active,
 .btn:hover {
     border-color: black;
+    color:black;
+    background-color: white;
 }
-.start-btn, .next-btn {
+#start-btn, #next-btn {
     font-size: 2rem;
     font-weight: bold;
     padding: 5px 20px;
