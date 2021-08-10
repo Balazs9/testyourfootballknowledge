@@ -38,18 +38,21 @@
 
     
     <div class="container">
-            <div id="question-container" class="hide">
-                <div id="question"></div>
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer1</button>
-                    <button class="btn">Answer2</button>
-                    <button class="btn">Answer3</button>
-                    <button class="btn">Answer4</button>
-                </div>
+            <div id="question-number">
+                <h2>Question <span class ="question-numb"></span> of <span class="total-question"></span></h2>
             </div>
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start</button>
-                <button id="next-btn" class="next-btn btn">Next</button>
+            <div class="question">
+                    Which country won the World Cup in 1938?
+            </div>
+            <div id="answer-buttons" class="btn-grid">
+                <div id="0" class="a" onclick="chechk(this)"></div> 
+                <div id="1" class="b" onclick="chechk(this)"></div>
+                <div id="2" class="c" onclick="chechk(this)"></div>
+                <div id="3" class="d" onclick="chechk(this)"></div>   
+                
+            </div>
+            <div class="button">
+                <button type="button" onclick="next()" class="btn">Next</button>
                 
             </div>
             <div class="score-section">

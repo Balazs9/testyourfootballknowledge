@@ -84,13 +84,19 @@ body {
     margin: 25px 0;
     border-radius: 8px;
 }
-
+.btn-grid div {
+    border-radius: 8px;
+    background-color: rgba(60, 60, 60, 0.6);
+    color: white;
+    padding: 5px 10px;
+}
 .btn {
     border-radius: 8px;
     background-color: rgba(60, 60, 60, 0.6);
     color: white;
     padding: 5px 10px;
 }
+
 .btn:active,
 .btn:hover {
     border-color: black;
