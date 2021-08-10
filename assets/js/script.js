@@ -104,3 +104,24 @@ function handleSubmit(event) {
 
 let form = document.getElementById('login-form');
 form.addEventListener('submit', handleSubmit);
+
+let usernames = ["Andy", "Mike", "Rick", "Gigi", "Fede"];
+
+let form = document.getElementById(login-form);
+let errorMessage = document.getElementById('errors');
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    let name = form.elements[usernames].value;
+
+    if (usernames.includes(name)) {
+        errorMessage.innerHtml = `<p>Sorry, the username ${name} is already in use. Please choose a differenr one. </p>`
+        errorMessage.style.display ='block';
+    
+    }
+    else { 
+        usernames.push(name);
+        form.submit();
+    }
+}
