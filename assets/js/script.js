@@ -88,3 +88,19 @@ for (let i=0; i<results.length; i++) {
 }
 tbody.innerHtml = tbodyHtml;
 document.body.appendChild(table);
+
+/**
+ * sign-in 
+ */
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let user = document.getElementById('username');
+    let password = document.getElementById('password');
+
+    console.log('Username:', user.value);
+    console.log('Password:', pass.value);
+}
+
+let form = document.getElementById('login-form');
+form.addEventListener('submit', handleSubmit);
