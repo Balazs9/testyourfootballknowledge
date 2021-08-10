@@ -69,7 +69,7 @@ let tableHtml = `
 <thead>
     <tr>
         <td>Players #</td>
-        <td>Value</td>
+        <td>Points</td>
     </tr>
 </thead>
 <tbody>
