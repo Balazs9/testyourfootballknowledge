@@ -1,12 +1,44 @@
-// wait for the DOM to finish loading the game
-// get the button elements and add event listeners to the
 
 
+let question = [
+    {
+        quest: "Which team won the World Cup in 1938?",
+
+        answer: {
+            a: 'Italy',
+            b: 'Germany',
+            c: 'Spain',
+            d: 'France',
+        },
+        correctAnswer: 'a'
+    },
+    {
+        quest: "Which player won the Ballon D'or in 2003?",
+
+        answer: {
+            a: 'Pavel Nedved',
+            b: 'Zinadine Zidane',
+            c: 'Ronaldo',
+            d: 'Luis Figo'
+        },
+        correctAnswer: 'a'
+    }
+]
+function showQuestion(){
+    let randomQuestion = Math.floor(Math.random()*question.length);
+
+}
+totalQuestionSpan.innerHTML = question.length
+    
+    
+
+
+showQuestion(question);
 
 /**
  * gets the current score from DOM and increment by 1
  */
-function incrementScore() {
+ function incrementScore() {
     let oldScore = parseInt(document.getElementById('score').innerText);
         document.getElementById('score').innerText = ++oldScore;    
 }
@@ -18,36 +50,41 @@ function incrementWrongAnswer(){
         document.getElementById('incorrect').innerText = ++oldScore; 
 }
 
-let question = [
-    {
-        question: "Which team won the World Cup in 1938?",
 
-        answer: {
-            a: 'Italy',
-            b: 'Germany',
-            c: 'Spain',
-            d: 'France',
-        },
-        correctAnswer: 'a'
-    },
-    {
-        question: "Which player won the Ballon D'or in 2003?",
+/**
+ * ScoreBoard 
+ */
+let results =[];
 
-        answer: {
-            a: 'Pavel Nedved',
-            b: 'Zinadine Zidane',
-            c: 'Ronaldo',
-            d: 'Luis Figo'
-        },
-        correctAnswer: 'a'
-    }
-]
-let showQuestions = []
-function showQuestions() {
-    while(showQuestions.length<=10) {
-        
-    }
-    
+let i=0;
+while (i<1000) {
+    SVGAnimatedNumberList.push(Math.floor(Math.random()*1000));
+    i++;
+};
+
+let table = document.createElement('table');
+table.id = 'random-numbers';
+
+let tableHtml = `
+<thead>
+    <tr>
+        <td>Players #</td>
+        <td>Value</td>
+    </tr>
+</thead>
+<tbody>
+</tbody>
+`;
+
+table.innerHtml = tableHtml;
+let tboy = table.getElementsByTagName('tbody')[0];
+for (let i=0; i<results.length; i++) {
+    tbodyHtml += `
+            <tr>
+                <td>&{i}</td>
+                <td>&{results[i]}</td>
+            </tr>
+            `
 }
-
-showQuestion(question);
+tbody.innerHtml = tbodyHtml;
+document.body.appendChild(table);
