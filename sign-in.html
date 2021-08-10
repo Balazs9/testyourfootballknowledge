@@ -15,7 +15,7 @@
     <title>FootballKnowledge</title>
 </head>
 
-<!--------------------------Nav bar---------------------->
+!--------------------------Nav bar---------------------->
 <body>
     <div id="head">
         <a href="index.html">
@@ -38,32 +38,22 @@
         </nav>
     </div>
 
-    <!--------------------------game area---------------------->
-    <div class="container">
-            <div id="question-number">
-                <h2>Question <span class ="question-numb"></span> of <span class="total-question"></span></h2>
-            </div>
-            <div class="question">
-                    Which country won the World Cup in 1938?
-            </div>
-            <div id="answer-buttons" class="btn-grid">
-                <div id="0" class="a" onclick="chechk(this)"></div> 
-                <div id="1" class="b" onclick="chechk(this)"></div>
-                <div id="2" class="c" onclick="chechk(this)"></div>
-                <div id="3" class="d" onclick="chechk(this)"></div>   
-                
-            </div>
-            <div class="button">
-                <button type="button" onclick="next()" class="btn">Next</button>
-                
-            </div>
-            <div class="score-section">
-                <p class="scores">Correct <span id="score">0</span></p>
-                <p class="scores">Wrong <span id="incorrect">0</span>
-            </div>
-            
-    </div>    
-    
+    <p>Sign-in to <code>handleSubmit()</code> see your <code>script.js</code>scores on the board</p>
+
+    <form id="login-form" method="POST" action="/login/">
+        <div class="username">
+            <label for "username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="password">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password">
+        </div>
+        <input type="submit" value="Login" />
+    </form>
+
+
     <script src="assets/js/script.js"></script>
 </body>
-</html>
+
+    
