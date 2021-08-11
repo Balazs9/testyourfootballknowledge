@@ -82,8 +82,19 @@ II.
 Used I am responsive site for test
 
 ## Deploying the project
+    - the project was deployed and stored in Git
+    - the source file was regulary pushed to repository Github
+    - Published from Github repository to Github pages, which is in settings where need to scroll down to Github pages section, here look for source where is a label called none. Change none to master branch and save it.
+    - Than the page will automatically refresh and the deployed link will be available.
+
+
 
 ## Credits
+    - Pixabay: for the photos what was used for the website
+
+[https://pixabay.com/]
+
+
 
 
 
