@@ -1,5 +1,19 @@
+let containerBox = document.getElementsByClassName('container');
+let resultsBox = document.getElementById('answer-buttons');
+let submitButton = document.getElementById('submit');
 
+function containerQuiz (){
+    let output = [];
+}
 
+function showResults(){}
+    containerQuiz();
+
+    submitButton.addEventListener('click', showResults);
+
+/**
+ * Displaying the quiz questions
+ */
 let question = [
     {
         quest: "Which team won the World Cup in 1938?",

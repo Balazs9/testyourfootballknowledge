@@ -17,7 +17,14 @@
 ### User Goals:
 
 1. First time visitor:
+    - easy navigation
+    - for everyone who want to play a football quiz
+    - score board and sign in option
+
 2. Returning gamer
+    - returning gamers who enjoyed the quiz
+    - shuffeled question list
+    - add new questions regulary
 
 ### Creator Goals:
 
@@ -31,6 +38,8 @@ I. Strategy:
 II. Scope
 III. Structure
 IV. Skelton
+#### Balsamiq wireframe for 2 different screen sizes
+![balsamiq wireframe](assets/images/TestYourFootballKnowledge.png)
 V. Surface
 
 ## Features
@@ -49,14 +58,20 @@ I. Languages :
 
 II. 
 1. Font Awesome
+    - football icon logo were taken from font awesome
 2. Google fonts
+    - google fonts were used to import Raleway font into style
 3. Git
+    - git was used for version control
 4. Github
+    - to store the project code
 5. Wireframe
-#### Balsamiq wireframe for 2 different screen sizes
-![balsamiq wireframe](assets/images/TestYourFootballKnowledge.png)
+    - Balsamiq wireframes for different screen size
 6. Coolores
+    - to find colors from a wide selection
+    [coolres](https://coolors.co/6f1d1b-bb9457-432818-99582a-ffe6a7)
 7. Am I responsive
+    - to see screen responsive design
 
 ## Testing
 
