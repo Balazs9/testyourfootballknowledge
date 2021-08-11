@@ -11,7 +11,8 @@
 8. Credits
 
 # Test your football knowledge
-
+Test your football knowledge is an online quiz game targeting everyone who likes football and quizgames.
+The site will provide a quiz game, scoreboard and a sign in page.
 ## User Experience
 
 ### User Goals:
@@ -34,13 +35,22 @@
 
 ## Development Plans
 
-I. Strategy:
-II. Scope
-III. Structure
-IV. Skelton
+### I. Strategy:
+#### The focus of the quiz site:
+    Target audience:
+        - football funs
+        - quiz funs
+#### Demographics:
+        - any age
+#### Psyhographics:
+        - people who want to play sports quiz
+        - people who want to relax and enjoy a quiz on their break
+### II. Scope
+### III. Structure
+### IV. Skelton
 #### Balsamiq wireframe for 2 different screen sizes
 ![balsamiq wireframe](assets/images/TestYourFootballKnowledge.png)
-V. Surface
+### V. Surface
 
 ## Features
 
