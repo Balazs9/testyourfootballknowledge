@@ -6,7 +6,7 @@
 3. Features
 4. Issues
 5. Technologies
-6. testing
+6. Testing
 7. Deployment
 8. Credits
 
@@ -53,6 +53,8 @@ II.
 3. Git
 4. Github
 5. Wireframe
+#### Balsamiq wireframe for 2 different screen sizes
+![balsamiq wireframe](assets/images/TestYourFootballKnowledge.png)
 6. Coolores
 7. Am I responsive
 

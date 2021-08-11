@@ -58,12 +58,12 @@ let results =[];
 
 let i=0;
 while (i<1000) {
-    SVGAnimatedNumberList.push(Math.floor(Math.random()*1000));
+    results.push(Math.floor(Math.random()*1000));
     i++;
 };
 
 let table = document.createElement('table');
-table.id = 'random-numbers';
+table.id = 'random-results';
 
 let tableHtml = `
 <thead>
@@ -77,7 +77,8 @@ let tableHtml = `
 `;
 
 table.innerHtml = tableHtml;
-let tboy = table.getElementsByTagName('tbody')[0];
+let tbody = table.getElementsByTagName('tbody')[0];
+let tbodyHtml = '';
 for (let i=0; i<results.length; i++) {
     tbodyHtml += `
             <tr>
