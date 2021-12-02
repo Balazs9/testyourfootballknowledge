@@ -1,16 +1,54 @@
-let containerBox = document.getElementsByClassName('container');
-let resultsBox = document.getElementById('answer-buttons');
-let submitButton = document.getElementById('submit');
+const questionBox = document.getElementById('questions');
+const resultsBox = document.getElementById('answer-buttons');
+const submitButton = document.getElementById('submit');
+const questionNumber = 0;
+const scoreCorrect = document.getElementById("score");
+const scoreWrong = document.getElementById("incoreect"); 
+const answerBox = document.getElementById("answer");
+const answer1 = document.getElementById("opt0");
+const answer2 = document.getElementById("opt1");
+const answer3 = document.getElementById("opt2");
+const answer4 = document.getElementById("opt3");
 
-function containerQuiz (){
-    let output = [];
+let questionNumb = "";
+
+questionBox.innerHTML = questionNumb;
+function start() {
+    
 }
+/*
+function game() {
+    questionBox.innerText = question.quest;
+    
+    const answer1 = document.getElementById("opt0");
+    const answer2 = document.getElementById("opt1");
+    const answer3 = document.getElementById("opt2");
+    const answer4 = document.getElementById("opt3");
 
-function showResults(){}
+    answer1.innerText = question.answer[0];
+    answer2.innerText = question.answer[1];
+    answer3.innerText = question.answer[2];
+    answer4.innerText = question.answer[3];
+
+}
+*/
+let start = game();
+/*
+function containerQuiz (questionBox){
+    let currentQuest = quest.length;
+    while (currentQuest > 1) {
+    questionBox.innerHTML = Math.floor(Math.random()*quest.length);
+    currentQuest -= 1;
+    } return quest;
+};*/
+/* function name() {
+    var user = prompt("Please enter your name");
+} */
+/*function showResults(){}
     containerQuiz();
 
     submitButton.addEventListener('click', showResults);
-
+*/
 /**
  * Displaying the quiz questions
  */
@@ -18,26 +56,17 @@ let question = [
     {
         quest: "Which team won the World Cup in 1938?",
 
-        answer: {
-            a: 'Italy',
-            b: 'Germany',
-            c: 'Spain',
-            d: 'France',
-        },
-        correctAnswer: 'a'
+        answer: ['Italy', 'Germany', 'Spain', 'France'],
+        correctAnswer: 1
     },
     {
         quest: "Which player won the Ballon D'or in 2003?",
 
-        answer: {
-            a: 'Pavel Nedved',
-            b: 'Zinadine Zidane',
-            c: 'Ronaldo',
-            d: 'Luis Figo'
-        },
-        correctAnswer: 'a'
+        answer: ['Pavel Nedved', 'Zinadine Zidane', 'Ronaldo', 'Luis Figo'],
+        correctAnswer: 1
     }
 ]
+/*
 function showQuestion(){
     let randomQuestion = Math.floor(Math.random()*question.length);
 
@@ -46,9 +75,9 @@ totalQuestionSpan.innerHTML = question.length
     
     
 
-
+containerQuiz(quest);
 showQuestion(question);
-
+*/
 /**
  * gets the current score from DOM and increment by 1
  */
@@ -69,7 +98,7 @@ function incrementWrongAnswer(){
  * ScoreBoard 
  */
 let results =[];
-
+results[score]= incrementScore() + incrementWrongAnswer();
 let i=0;
 while (i<1000) {
     results.push(Math.floor(Math.random()*1000));

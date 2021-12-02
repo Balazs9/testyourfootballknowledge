@@ -41,15 +41,16 @@
     <!--------------------------game area---------------------->
     <div class="container">
             
-            <div class="question">
-                    Which country won the World Cup in 1938?
+            <div class="question" id="questions">
+                    
             </div>
-            <div id="answer-buttons" class="btn-grid">
-                <div id="0" class="a" onclick="chechk(this)"></div> 
-                <div id="1" class="b" onclick="chechk(this)"></div>
-                <div id="2" class="c" onclick="chechk(this)"></div>
-                <div id="3" class="d" onclick="chechk(this)"></div>   
-                
+            <div class="btn-grid">
+                <ul id="answer">
+                    <li id="opt0" class="answ" onclick="check(this)"></li> 
+                    <li id="opt1" class="answ" onclick="check(this)"></li>
+                    <li id="opt2" class="answ" onclick="check(this)"></li>
+                    <li id="opt3" class="answ" onclick="check(this)"></li>   
+                </ul>
             </div>
             <div class="button">
                 <button id="submit" type="button" onclick="next()" class="btn">Next</button>
