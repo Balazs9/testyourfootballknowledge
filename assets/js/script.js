@@ -1,5 +1,4 @@
 const questionBox = document.getElementById('questions');
-const resultsBox = document.getElementById('answer-buttons');
 const submitButton = document.getElementById('submit');
 const scoreCorrect = document.getElementById("score");
 const scoreWrong = document.getElementById("incorrect"); 
@@ -9,14 +8,11 @@ const answer2 = document.getElementById("opt1");
 const answer3 = document.getElementById("opt2");
 const answer4 = document.getElementById("opt3");
 const startingPage = 0;
-const questNumber = 4;
+const questionCount = 0;
 
-/*
+
 answer1.onclick = function(event) {
     console.log(event);
-    if (answer1==question.correctAnwser) {
-        console.log(answ1);
-    };
 }
 answer2.onclick = function(event) {
     console.log(event);
@@ -28,9 +24,6 @@ answer4.onclick = function(event) {
     console.log(event);
 }
 
-
-submitButton.addEventListener("click", displayQuestion);
-*/
 /**
  * Displaying the quiz questions
  */
@@ -41,14 +34,14 @@ let question = [
         
         answers: ["Italy", "Germany", "Spain", "France"],
 
-        correctAnswer: "Italy"
+        correctAnswer: 0
     },
     {
         questions: "Which player won the Ballon D'or in 2003?",
 
         answers: ['Pavel Nedved', 'Zinadine Zidane', 'Ronaldo', 'Luis Figo'],
 
-        correctAnswer: "Pavel Nedved"
+        correctAnswer: 0
     }
 ]
 /*
@@ -70,17 +63,20 @@ function displayAnswers() {
 }
 displayAnswers();
 */
+
 submitButton.addEventListener("click", nextQuestion);
 
+/*
 function nextQuestion() {
     console.log("begin");
     for(var q in question){
         console.log(question[q]);
-        for(var a in question[q].answers){
+        questionBox.textContent = question[q].questions;
+        for(var a=0; a<question[q].answers.length; a++){
             console.log("hello");
+            answerBox.textContent = question[q].answers[a];
             let correct=question[q].correct;
-            if(a==correct){
-                
+            if(a==correct){  
                 console.log("good");
             }
             else {
@@ -89,4 +85,29 @@ function nextQuestion() {
         }
     }
 }
+*/
+
+for(var q in question){
+    console.log(question[q]);
+    
+    for(var a=0; a<question[q].answers.length; a++){
+        console.log("hello");
+        
+        let correct=question[q].correctAnswer;
+        if(a==correct){  
+            console.log("good");
+        }
+        else {
+            console.log("wrong");
+        }
+    }
+    questionCount++;
+}
+
+
+function nextQuestion() {
+    questionBox.textContent = question[q].questions;
+    answerBox.textContent = question[q].answers;
+}
+
 nextQuestion();
