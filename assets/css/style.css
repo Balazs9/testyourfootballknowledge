@@ -73,7 +73,7 @@ body {
 /* --------------------  Body ---- */
 
 .container {
-    margin-top: 200px;
+    margin: 200px;
     height: 400px;
     width: 600px;
     max-width: 80%;
@@ -94,18 +94,18 @@ body {
 }
 .btn-grid {
     width: 100%;
-    float: left;
+    background-position: center;
 }
-.btn-grid ul {
+#answer {
     display: flex;
     padding: 0;
-    flex-wrap: wrap;
+    flex-wrap:nowrap;
     justify-content: space-between;
     border-radius: 8px;
     color: white;
     padding: 15px 10px;
 }
-.btn-grid li {
+.answ {
     display: inline-block;
     width: 45%;
     border-radius: 8px;
@@ -116,8 +116,8 @@ body {
     padding: 15px;
     cursor: pointer;
 }
-.btn-grid li:active,
-.btn-grid li:hover {
+.answ:active,
+.answ:hover {
     background-color: #c3c6d5;
 }
 .btn {

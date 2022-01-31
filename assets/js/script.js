@@ -1,113 +1,119 @@
-const questionBox = document.getElementById('questions');
-const submitButton = document.getElementById('submit');
-const scoreCorrect = document.getElementById("score");
-const scoreWrong = document.getElementById("incorrect"); 
-const answerBox = document.getElementsByClassName("answ");
-const answer1 = document.getElementById("opt0");
-const answer2 = document.getElementById("opt1");
-const answer3 = document.getElementById("opt2");
-const answer4 = document.getElementById("opt3");
-const startingPage = 0;
-const questionCount = 0;
+var startingPage = document.getElementById("page");
+var questionBox = document.getElementById('questions');
+var submitButton = document.getElementById('submit');
+var scoreCorrect = document.getElementById("score");
+var scoreWrong = document.getElementById("incorrect"); 
+var answerBox = document.getElementById("answer");
+var answer1 = document.getElementById("opt0");
+var answer2 = document.getElementById("opt1");
+var answer3 = document.getElementById("opt2");
+var answer4 = document.getElementById("opt3");
+var questionCount = 0;
+var score = 0;
 
-
-answer1.onclick = function(event) {
-    console.log(event);
-}
-answer2.onclick = function(event) {
-    console.log(event);
-}
-answer3.onclick = function(event) {
-    console.log(event);
-}
-answer4.onclick = function(event) {
-    console.log(event);
-}
 
 /**
  * Displaying the quiz questions
  */
 
-let question = [
+let QuizBox = [
     {
-        questions: "Which team won the World Cup in 1938?",
+        question: "Which team won the World Cup in 1938?",
         
         answers: ["Italy", "Germany", "Spain", "France"],
 
-        correctAnswer: 0
+        correctAnswer: "Italy"
     },
     {
-        questions: "Which player won the Ballon D'or in 2003?",
+        question: "Which player won the Ballon D'or in 2003?",
 
         answers: ['Pavel Nedved', 'Zinadine Zidane', 'Ronaldo', 'Luis Figo'],
 
-        correctAnswer: 0
+        correctAnswer: "Pavel Nedved"
     }
-]
-/*
-function displayQuestion() {
-    console.log("start");
-    questionBox.textContent = question[q].questeions;
+];
 
+let gameQuestion = QuizBox[questionCount];
 
-    answer1.textContent = question[0].answ1;
-    answer2.textContent = question[0].answ2;
-    answer3.textContent = question[0].answ3;
-    answer4.textContent = question[0].answ4;
-}
-displayQuestion();
-
-
-function displayAnswers() {
-    answerBox.textContent = question[0].answers;
-}
-displayAnswers();
-*/
-
-submitButton.addEventListener("click", nextQuestion);
-
-/*
-function nextQuestion() {
-    console.log("begin");
-    for(var q in question){
-        console.log(question[q]);
-        questionBox.textContent = question[q].questions;
-        for(var a=0; a<question[q].answers.length; a++){
-            console.log("hello");
-            answerBox.textContent = question[q].answers[a];
-            let correct=question[q].correct;
-            if(a==correct){  
-                console.log("good");
-            }
-            else {
-                console.log("wrong");
-            }
-        }
-    }
-}
-*/
-
-for(var q in question){
-    console.log(question[q]);
-    
-    for(var a=0; a<question[q].answers.length; a++){
-        console.log("hello");
-        
-        let correct=question[q].correctAnswer;
-        if(a==correct){  
+console.log(gameQuestion);
+function displayQuestion(gameQuestion) {
+    questionBox.textContent = gameQuestion.question;
+    answer1.textContent = gameQuestion.answers[0];
+    answer1.onclick = function() {
+        if(gameQuestion.correctAnswer==gameQuestion.answers[0]){
             console.log("good");
         }
-        else {
+        else{
             console.log("wrong");
         }
-    }
-    questionCount++;
+    };
+    answer2.textContent = gameQuestion.answers[1];
+    answer2.onclick = function() {
+        if(gameQuestion.correctAnswer==gameQuestion.answers[1]){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+    answer3.textContent = gameQuestion.answers[2];
+    answer3.onclick = function() {
+        if(gameQuestion.correctAnswer==gameQuestion.answers[2]){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+    answer4.textContent = gameQuestion.answers[3];
+    answer4.onclick = function() {
+        if(gameQuestion.correctAnswer==gameQuestion.answers[3]){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+};
+
+displayQuestion(gameQuestion);
+/*
+function checkAnswer(displayQuestion) {
+    answer1.onclick = function() {
+        if(gameQuestion.correctAnswer==){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+    answer2.onclick = function() {
+        if(gameQuestion.correctAnswer==answer2){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+    answer3.onclick = function() {
+        if(gameQuestion.correctAnswer==answer3){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
+    answer4.onclick = function() {
+        if(gameQuestion.correctAnswer==answer4){
+            console.log("good");
+        }
+        else{
+            console.log("wrong");
+        }
+    };
 }
+checkAnswer();
+function nextQuestion(displayQuestion) {
 
-
-function nextQuestion() {
-    questionBox.textContent = question[q].questions;
-    answerBox.textContent = question[q].answers;
 }
-
-nextQuestion();
+*/
