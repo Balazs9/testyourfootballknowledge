@@ -7,7 +7,7 @@
 
 <!--------------------------font awesome and google fonts -->
     
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,51 +17,69 @@
 
 <!--------------------------Nav bar---------------------->
 <body>
-    <div id="head">
-        <a href="index.html">
-        <h1 class="heading">
-            <img class="logo" src="assets/images/futbol-solid.svg" alt="logo">Football Quiz!
-        </h1>
-        </a>
-        <nav id="menu">
-            <ul>
-                <li>
-                    <a href="sign-in.html">Sign in</a>
-                </li>
-                <li>
-                    <a href="scoreboard.html">ScoreBoard</a>
-                </li>
-                <li>
-                    <a href="index.html">Play</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <section class="header">
+        <div id="head">
+            <a href="index.html">
+            <h1 class="heading">
+                <img class="logo" src="assets/images/futbol-solid.svg" alt="logo">Football Quiz!
+            </h1>
+            </a>
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="sign-in.html">Sign in</a>
+                    </li>
+                    <li>
+                        <a href="scoreboard.html">ScoreBoard</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Play</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
     <!--------------------------game area---------------------->
-    <div class="container" id="page">
-            
-            <div class="question" id="questions">
-                    
-            </div>
-            <div class="btn-grid">
-                <ul id="answer">
-                    <li id="opt0" class="answ" name="opt" onclick=""></li> 
-                    <li id="opt1" class="answ" name="opt" onclick=""></li>
-                    <li id="opt2" class="answ" name="opt" onclick=""></li>
-                    <li id="opt3" class="answ" name="opt" onclick=""></li>   
-                </ul>
-            </div>
-            <div class="button">
-                <button id="submit" type="button" class="btn">Next</button>
+    <section class="game-area">
+        <div class="container" id="page">
                 
-            </div>
-            <div class="score-section">
-                <p class="scores">Correct <span id="score">0</span></p>
-                <p class="scores">Wrong <span id="incorrect">0</span>
-            </div>
-            
-    </div>    
+                <div class="question" id="questions">
+                        
+                </div>
+                <div class="btn-grid">
+                    <ul id="answer">
+                        <li id="opt0" class="answ" name="opt" onclick=""></li> 
+                        <li id="opt1" class="answ" name="opt" onclick=""></li>
+                        <li id="opt2" class="answ" name="opt" onclick=""></li>
+                        <li id="opt3" class="answ" name="opt" onclick=""></li>   
+                    </ul>
+                </div>
+                <div class="button">
+                    <button id="submit" type="button" class="btn">Next</button>
+                    
+                </div>
+                <div class="score-section">
+                    <p class="scores">Correct <span id="score">0</span></p>
+                    <p class="scores">Wrong <span id="incorrect">0</span>
+                </div>
+                
+        </div>
+    </section>
+
+    <footer>
+        <ul class="social">
+            <li>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Play it on Facebook"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener" aria-label="Find us on Instagram"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener" aria-label="Play us on Twitter"><i class="fab fa-twitter-square"></i></a>
+            </li>
+        </ul>
+    </footer>
     
     <script src="assets/js/script.js"></script>
 </body>
