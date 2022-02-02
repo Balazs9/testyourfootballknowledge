@@ -28,9 +28,7 @@
     
 }
 .heading {
-    color: black;
-    
-    
+    color: black;    
     position: relative;
 }
 #menu {
@@ -286,6 +284,7 @@ footer{
 @media screen and (max-width: 400px) {
     .header{
         float: left;
+        max-width: 100%;
     }
     .heading {
         margin: auto;

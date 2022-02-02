@@ -3,7 +3,7 @@ var questionBox = document.getElementById('questions');
 var submitButton = document.getElementById('submit');
 var scoreCorrect = document.getElementById("score");
 var scoreWrong = document.getElementById("incorrect"); 
-var answerBox = document.getElementById("answer");
+var answerBox = document.getElementsByClassName("answ");
 var answer1 = document.getElementById("opt0");
 var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
@@ -39,18 +39,24 @@ let QuizBox = [
     }
 ];
 let gameQuestion = [...QuizBox];
-console.log(gameQuestion)
 
 let answer = gameQuestion[questionCount].correctAnswer;
-console.log(answer);
 let choices = QuizBox[questionCount].answers;
 
-submitButton.addEventListener("click", next);
+submitButton.addEventListener("click", beginGame);
+
+function beginGame() {
+    questionCount++;
+    displayQuestion();
+}
 
 function displayQuestion(questionCount) {
-    for(questionCount in QuizBox){
-        questionBox.textContent = QuizBox[questionCount].question;
-        answer1.textContent = QuizBox[questionCount].answers[0];
+    // The code random to schuffle question is from code institute lavo math javascript project
+    let schuffleQuestion = Math.floor(Math.random() * QuizBox.length);
+    questionBox.textContent = QuizBox[schuffleQuestion].question;
+    for(let q=0; q<answerBox.length; q++){
+        answerBox[q].textContent = QuizBox[schuffleQuestion].answers[q];
+       
         answer1.onclick = function() {
             if(answer==choices[0]){
                 console.log("good");
@@ -61,7 +67,7 @@ function displayQuestion(questionCount) {
                 console.log("wrong");
             }
         };
-        answer2.textContent = QuizBox[questionCount].answers[1];
+        
         answer2.onclick = function() {
             if(answer==choices[1]){
                 console.log("good");
@@ -70,7 +76,7 @@ function displayQuestion(questionCount) {
                 console.log("wrong");
             }
         };
-        answer3.textContent = QuizBox[questionCount].answers[2];
+        
         answer3.onclick = function() {
             if(answer==choices[2]){
                 console.log("good");
@@ -79,7 +85,7 @@ function displayQuestion(questionCount) {
                 console.log("wrong");
             }
         };
-        answer4.textContent = QuizBox[questionCount].answers[3];
+        
         answer4.onclick = function() {
             if(answer==choices[3]){
                 console.log("good");
@@ -89,12 +95,16 @@ function displayQuestion(questionCount) {
             }
         };
     };
+    submitButton.addEventListener("click", next);
 };
 
-submitButton.addEventListener("click", next);
+/**
+ *  Eventlistener button "next"
+ *  run displayQuestion function
+ */
 
 function next() {
-    questionCount++;
+    submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
 }
 next();
