@@ -9,8 +9,7 @@ var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
 var answer4 = document.getElementById("opt3");
 var questionCount = 0;
-var score = 0;
-
+var playerChoice = "";
 
 /**
  * Displaying the quiz questions
@@ -22,98 +21,80 @@ let QuizBox = [
         
         answers: ["Italy", "Germany", "Spain", "France"],
 
-        correctAnswer: "Italy"
+        correctAnswer: ["Italy"]
     },
     {
         question: "Which player won the Ballon D'or in 2003?",
 
-        answers: ['Pavel Nedved', 'Zinadine Zidane', 'Ronaldo', 'Luis Figo'],
+        answers: ["Pavel Nedved", "Zinadine Zidane", "Ronaldo", "Luis Figo"],
 
-        correctAnswer: "Pavel Nedved"
+        correctAnswer: ["Pavel Nedved"]
+    },
+    {
+        question: "Where did Cristiano Ronaldo play at 2007?",
+
+        answers: ["Real Madrid", "Sporting Lisboan", "Juventus", "Manchester United"],
+
+        correctAnswer: ["Manchester United"]
     }
 ];
+let gameQuestion = [...QuizBox];
+console.log(gameQuestion)
 
-let gameQuestion = QuizBox[questionCount];
+let answer = gameQuestion[questionCount].correctAnswer;
+console.log(answer);
+let choices = QuizBox[questionCount].answers;
 
-console.log(gameQuestion);
-function displayQuestion(gameQuestion) {
-    questionBox.textContent = gameQuestion.question;
-    answer1.textContent = gameQuestion.answers[0];
-    answer1.onclick = function() {
-        if(gameQuestion.correctAnswer==gameQuestion.answers[0]){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer2.textContent = gameQuestion.answers[1];
-    answer2.onclick = function() {
-        if(gameQuestion.correctAnswer==gameQuestion.answers[1]){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer3.textContent = gameQuestion.answers[2];
-    answer3.onclick = function() {
-        if(gameQuestion.correctAnswer==gameQuestion.answers[2]){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer4.textContent = gameQuestion.answers[3];
-    answer4.onclick = function() {
-        if(gameQuestion.correctAnswer==gameQuestion.answers[3]){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
+submitButton.addEventListener("click", next);
+
+function displayQuestion(questionCount) {
+    for(questionCount in QuizBox){
+        questionBox.textContent = QuizBox[questionCount].question;
+        answer1.textContent = QuizBox[questionCount].answers[0];
+        answer1.onclick = function() {
+            if(answer==choices[0]){
+                console.log("good");
+                questionCount++;
+                next(questionCount);
+            }
+            else{
+                console.log("wrong");
+            }
+        };
+        answer2.textContent = QuizBox[questionCount].answers[1];
+        answer2.onclick = function() {
+            if(answer==choices[1]){
+                console.log("good");
+            }
+            else{
+                console.log("wrong");
+            }
+        };
+        answer3.textContent = QuizBox[questionCount].answers[2];
+        answer3.onclick = function() {
+            if(answer==choices[2]){
+                console.log("good");
+            }
+            else{
+                console.log("wrong");
+            }
+        };
+        answer4.textContent = QuizBox[questionCount].answers[3];
+        answer4.onclick = function() {
+            if(answer==choices[3]){
+                console.log("good");
+            }
+            else{
+                console.log("wrong");
+            }
+        };
     };
 };
 
-displayQuestion(gameQuestion);
-/*
-function checkAnswer(displayQuestion) {
-    answer1.onclick = function() {
-        if(gameQuestion.correctAnswer==){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer2.onclick = function() {
-        if(gameQuestion.correctAnswer==answer2){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer3.onclick = function() {
-        if(gameQuestion.correctAnswer==answer3){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-    answer4.onclick = function() {
-        if(gameQuestion.correctAnswer==answer4){
-            console.log("good");
-        }
-        else{
-            console.log("wrong");
-        }
-    };
-}
-checkAnswer();
-function nextQuestion(displayQuestion) {
+submitButton.addEventListener("click", next);
 
+function next() {
+    questionCount++;
+    displayQuestion();
 }
-*/
+next();
