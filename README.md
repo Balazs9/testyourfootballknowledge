@@ -83,7 +83,9 @@ Functionality requrimenets:
 1. Existing features
 
 ![game](assets/images/main.png)
+
 2. Features to implement
+
 
 ## Issues
 

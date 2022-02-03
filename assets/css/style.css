@@ -99,10 +99,14 @@
     min-height: 50px;
     font-size: 18px;
     border-radius: 8px;
-    
+    color: white;
     background-color:rgba(60, 60, 60, 0.6);
     width: 100%;
     float: left;
+    padding-top: 15px;
+}
+.scores{
+    color: white;
 }
 .btn-grid {
     width: 100%;

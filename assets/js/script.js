@@ -9,10 +9,14 @@ var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
 var answer4 = document.getElementById("opt3");
 var questionCount = 0;
-var playerChoice = "";
+var scorePlus = 0;
+var scoreMinus = 0;
+var gameRound = 0;
+var gameTurn = document.getElementById("turn");
+gameTurn.textContent = 5;
 
 /**
- * Displaying the quiz questions
+ *  The quiz questions, answers and correctanswers
  */
 
 let QuizBox = [
@@ -47,12 +51,12 @@ let QuizBox = [
     {
         question: "Which team won the Premier League in 2008? ",
 
-        answers: ["Chelsea", "Manchester City", "Mancheter United", "Arsenal"],
+        answers: ["Chelsea", "Manchester City", "Manchester United", "Arsenal"],
 
         correctAnswer: "Manchester United"
     },
     {
-        question: "Which brand sponsored Marco Divaio? ",
+        question: "Which brand sponsored Marco Di Vaio? ",
 
         answers: ["Puma", "Nike", "Adidas", "Mizuno"],
 
@@ -67,6 +71,13 @@ function beginGame() {
     displayQuestion();
 }
 
+
+/**
+ *  DisplayQuestion function, displaying the questions,
+ *  schuffle them, they will come up in a random order
+ *  also checking if the answer is correct or not
+ */
+
 function displayQuestion(questionCount) {
     // The code random to schuffle question is from code institute lavo math javascript project
     let schuffleQuestion = Math.floor(Math.random() * QuizBox.length);
@@ -77,45 +88,64 @@ function displayQuestion(questionCount) {
         answer1.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[0]){
                 console.log("good");
+                scorePlus++;
+                scoreCorrect.textContent =+ scorePlus;
             }
             else{
                 console.log("wrong");
+                scoreMinus++;
+                scoreWrong.textContent =+ scoreMinus;
             }
         };
         
         answer2.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[1]){
                 console.log("good");
+                scorePlus++;
+                scoreCorrect.textContent =+ scorePlus;
             }
             else{
                 console.log("wrong");
+                scoreMinus++;
+                scoreWrong.textContent =+ scoreMinus;
             }
         };
         
         answer3.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[2]){
                 console.log("good");
+                scorePlus++;
+                scoreCorrect.textContent =+ scorePlus;
             }
             else{
                 console.log("wrong");
+                scoreMinus++;
+                scoreWrong.textContent =+ scoreMinus;
             }
         };
         
         answer4.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[3]){
                 console.log("good");
+                scorePlus++;
+                scoreCorrect.textContent =+ scorePlus;
             }
             else{
                 console.log("wrong");
+                scoreMinus++;
+                scoreWrong.textContent =+ scoreMinus;
             }
         };
-    };
+        if(gameTurn.textContent)
     submitButton.addEventListener("click", next);
+
+    };
 };
+
 
 /**
  *  Eventlistener button "next"
- *  run displayQuestion function
+ *  to run displayQuestion function
  */
 
 function next() {
