@@ -46,15 +46,43 @@ The site will provide a quiz game, scoreboard and a sign in page.
         - people who want to play sports quiz
         - people who want to relax and enjoy a quiz on their break
 ### II. Scope
+
+#### Requirements:
+
+The player will be looking:
+
+- a football quiz with fun
+
+- with many questions
+
+- learning facts
+
+Functionality requrimenets:
+
+- easy navigation
+
+- links to social media
+
 ### III. Structure
+
+#### The information of the quiz site was organized in a tree structure:
+
+![diagram](assets/images/quiz-diagram.png)
+
 ### IV. Skelton
 #### Balsamiq wireframe for 2 different screen sizes
 ![balsamiq wireframe](assets/images/TestYourFootballKnowledge.png)
 ### V. Surface
 
+- main colors what is used are: grey, white, yellow and red
+
+- raleway font used with sans serif
+
 ## Features
 
 1. Existing features
+
+![game](assets/images/main.png)
 2. Features to implement
 
 ## Issues
@@ -89,7 +117,7 @@ II.
 2. CSS validator
 3. Screen responsive test
 
-Used I am responsive site for test
+Used am I responsive site for test
 
 ## Deploying the project
     - the project was deployed and stored in Git
