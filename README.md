@@ -86,8 +86,15 @@ Functionality requrimenets:
 
 2. Features to implement
 
+- player can give their name
+
+- scoreboard to show the scores from players
 
 ## Issues
+
+During the development what needed to be fixed:
+
+- The game area was not responding as expected, after the questions and answers displayed the next question did not work. Searching for the problem in the code institue javascript concepts lesson, i found the Math.floor(Math.random) built in function, what was helping to schuffle my questions and i could iterate through questions.
 
 ## Technologies
 
@@ -116,7 +123,13 @@ II.
 ## Testing
 
 1. HTML validator
+
+- index.html: no errors or warning
+
 2. CSS validator
+
+- style.css: no errors or warning
+
 3. Screen responsive test
 
 Used am I responsive site for test

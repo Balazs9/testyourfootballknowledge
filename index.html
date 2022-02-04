@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
 <!--------------------------font awesome and google fonts -->
     
@@ -12,6 +13,10 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
     <title>FootballKnowledge</title>
 </head>
 
@@ -27,9 +32,6 @@
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="scoreboard.html">ScoreBoard</a>
-                    </li>
-                    <li>
                         <a href="index.html">Play</a>
                     </li>
                 </ul>
@@ -39,29 +41,29 @@
 
     <!--------------------------game area---------------------->
     <section class="game-area">
+        
         <div class="container" id="page">
-                
-                <div class="question" id="questions">
-                        
-                </div>
-                <div class="btn-grid">
-                    <ul id="answer">
-                        <li id="opt0" class="answ" name="opt" onclick=""></li> 
-                        <li id="opt1" class="answ" name="opt" onclick=""></li>
-                        <li id="opt2" class="answ" name="opt" onclick=""></li>
-                        <li id="opt3" class="answ" name="opt" onclick=""></li>   
-                    </ul>
-                </div>
-                <div class="button">
-                    <button id="submit" type="button" class="btn">Next</button>
+            
+            <div class="question" id="questions">
                     
-                </div>
-                <div class="score-section">
-                    <p class="scores">Correct <span id="score"></span></p>
-                    <p class="scores">Wrong <span id="incorrect"></span></p>
-                    <p class="scores">Game Rounds <span id="turn"></span></p>
+            </div>
+            <div class="btn-grid">
+                <ul id="answer">
+                    <li id="opt0" class="answ" onclick=""></li> 
+                    <li id="opt1" class="answ" onclick=""></li>
+                    <li id="opt2" class="answ" onclick=""></li>
+                    <li id="opt3" class="answ" onclick=""></li>   
+                </ul>
+            </div>
+            <div class="button">
+                <button id="submit" type="button" class="btn">Next</button>
+                
+            </div>
+            <div class="score-section">
+                <p class="scores">Correct <span id="score"></span></p>
+                <p class="scores">Wrong <span id="incorrect"></span></p>
 
-                </div>
+            </div>
                 
         </div>
     </section>

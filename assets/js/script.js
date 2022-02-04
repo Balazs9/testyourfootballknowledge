@@ -11,9 +11,8 @@ var answer4 = document.getElementById("opt3");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
-var gameRound = 0;
-var gameTurn = document.getElementById("turn");
-gameTurn.textContent = 5;
+
+
 
 /**
  *  The quiz questions, answers and correctanswers
@@ -44,7 +43,7 @@ let QuizBox = [
     {
         question: "Who did not play with Kaka in Ac Milan in 2006? ",
 
-        answers: ["Clarance Seedorf", "Andrea Pirlo", "Filippo Inzaghi", "Ronaldinho"],
+        answers: ["Clarence Seedorf", "Andrea Pirlo", "Filippo Inzaghi", "Ronaldinho"],
 
         correctAnswer: "Ronaldinho"
     },
@@ -61,6 +60,41 @@ let QuizBox = [
         answers: ["Puma", "Nike", "Adidas", "Mizuno"],
 
         correctAnswer: "Nike"
+    },
+    {
+        question: "Which team won the most champions league? ",
+
+        answers: ["Bayern Munchen", "Milan", "Liverpool", "Barcelona"],
+
+        correctAnswer: "Milan"
+    },
+    {
+        question: "Which team won the most Premier League? ",
+
+        answers: ["Manchester United", "Chelsea", "Liverpool", "Arsenal"],
+
+        correctAnswer: "Manchester United"
+    },
+    {
+        question: "Which team won the most Serie A? ",
+
+        answers: ["Juventus", "Milan", "Lazio", "Inter Milan"],
+
+        correctAnswer: "Juventus"
+    },
+    {
+        question: "Which player won Champions League with 3 different team? ",
+
+        answers: ["Zinadine Zidane", "Clarence Seedorf", "Michael Laudrup", "Ronaldo"],
+
+        correctAnswer: "Clarence Seedorf"
+    },
+    {
+        question: "Who won Champions League as a player and a coach too? ",
+
+        answers: ["Jurgen Klopp", "Carlo Ancelotti", "Thomas Tuchel", "Antonio Conte"],
+
+        correctAnswer: "Carlo Ancelotti"
     }
 ];
 
@@ -90,6 +124,7 @@ function displayQuestion(questionCount) {
                 console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
+
             }
             else{
                 console.log("wrong");
@@ -136,7 +171,6 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
             }
         };
-        if(gameTurn.textContent)
     submitButton.addEventListener("click", next);
 
     };
