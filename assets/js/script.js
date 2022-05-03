@@ -13,7 +13,6 @@ var scorePlus = 0;
 var scoreMinus = 0;
 
 
-
 /**
  *  The quiz questions, answers and correctanswers
  */
@@ -103,6 +102,19 @@ submitButton.addEventListener("click", beginGame);
 function beginGame() {
     questionCount++;
     displayQuestion();
+    if (questionCount==6){
+        console.log("end")
+        if(scorePlus>scoreMinus){
+            alert(`Congratulations! You have a good football knwoledge!`);
+        }
+        else{
+            alert(`Sorry you lost, but don't give up!`);
+        }
+    }
+    else{
+        console.log("continue")
+    }
+
 }
 
 
@@ -113,7 +125,7 @@ function beginGame() {
  */
 
 function displayQuestion(questionCount) {
-    // The code random to schuffle question is from code institute lavo math javascript project
+    // The code random to schuffle question is from code institute love math javascript project
     let schuffleQuestion = Math.floor(Math.random() * QuizBox.length);
     questionBox.textContent = QuizBox[schuffleQuestion].question;
     for(let q=0; q<answerBox.length; q++){
@@ -124,12 +136,12 @@ function displayQuestion(questionCount) {
                 console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
-
             }
             else{
                 console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
+
             }
         };
         
@@ -143,6 +155,7 @@ function displayQuestion(questionCount) {
                 console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
+
             }
         };
         
@@ -151,11 +164,13 @@ function displayQuestion(questionCount) {
                 console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
+
             }
             else{
                 console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
+
             }
         };
         
@@ -164,11 +179,13 @@ function displayQuestion(questionCount) {
                 console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
+
             }
             else{
                 console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
+
             }
         };
     submitButton.addEventListener("click", next);
@@ -185,5 +202,6 @@ function displayQuestion(questionCount) {
 function next() {
     submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
+    
 }
 next();
