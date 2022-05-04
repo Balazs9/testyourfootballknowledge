@@ -100,21 +100,8 @@ let QuizBox = [
 submitButton.addEventListener("click", beginGame);
 
 function beginGame() {
-    questionCount++;
+    submitButton.style.visibility = "hidden";
     displayQuestion();
-    if (questionCount==6){
-        console.log("end")
-        if(scorePlus>scoreMinus){
-            alert(`Congratulations! You have a good football knwoledge!`);
-        }
-        else{
-            alert(`Sorry you lost, but don't give up!`);
-        }
-    }
-    else{
-        console.log("continue")
-    }
-
 }
 
 
@@ -143,6 +130,7 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            next();
         };
         
         answer2.onclick = function() {
@@ -157,6 +145,8 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            next();
+
         };
         
         answer3.onclick = function() {
@@ -172,6 +162,8 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            next();
+
         };
         
         answer4.onclick = function() {
@@ -187,8 +179,10 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            next();
+
         };
-    submitButton.addEventListener("click", next);
+    // submitButton.addEventListener("click", next);
 
     };
 };
@@ -202,6 +196,18 @@ function displayQuestion(questionCount) {
 function next() {
     submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
-    
+    questionCount++;
+    if (questionCount==6){
+        console.log("end")
+        if(scorePlus>scoreMinus){
+            alert(`Congratulations! You have a good football knwoledge!`);
+        }
+        else{
+            alert(`Sorry you lost, but don't give up!`);
+        }
+    }
+    else{
+        console.log("continue")
+    };
 }
-next();
+
