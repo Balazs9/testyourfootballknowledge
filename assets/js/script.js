@@ -8,9 +8,11 @@ var answer1 = document.getElementById("opt0");
 var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
 var answer4 = document.getElementById("opt3");
+var gameOver = document.getElementById("endG");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
+var gameTurn = 6;
 
 
 /**
@@ -193,6 +195,10 @@ function displayQuestion(questionCount) {
  *  to run displayQuestion function
  */
 
+let alerts = [
+    {win: "Congratulations! You have a good football knwoledge!",
+    lose: "Sorry you lost, but don't give up!"}
+];
 function next() {
     submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
@@ -200,14 +206,25 @@ function next() {
     if (questionCount==6){
         console.log("end")
         if(scorePlus>scoreMinus){
-            alert(`Congratulations! You have a good football knwoledge!`);
+            gameOver.textContent = alerts[0].win;
         }
         else{
-            alert(`Sorry you lost, but don't give up!`);
+            gameOver.textContent = alerts[0].lose;       
         }
+        
     }
     else{
         console.log("continue")
     };
 }
-
+/*
+function endGame() {
+    if (questionCount==6){
+        gameOver.textContent;
+        beginGame();
+    }
+    else {
+        next();
+    }
+}
+*/
