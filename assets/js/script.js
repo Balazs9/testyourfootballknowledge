@@ -12,7 +12,7 @@ var gameOver = document.getElementById("endG");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
-var gameTurn = 6;
+
 
 
 /**
@@ -188,7 +188,6 @@ function displayQuestion(questionCount) {
             next();
 
         };
-    // submitButton.addEventListener("click", next);
     
     };
 };
