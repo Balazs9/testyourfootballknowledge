@@ -119,7 +119,7 @@ function displayQuestion(questionCount) {
     questionBox.textContent = QuizBox[schuffleQuestion].question;
     for(let q=0; q<answerBox.length; q++){
         answerBox[q].textContent = QuizBox[schuffleQuestion].answers[q];
-    
+        
         answer1.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[0]){
                 console.log("good");
@@ -132,6 +132,7 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            QuizBox.splice(schuffleQuestion, 1);
             next();
         };
         
@@ -147,6 +148,7 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            QuizBox.splice(schuffleQuestion, 1);
             next();
 
         };
@@ -164,6 +166,7 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            QuizBox.splice(schuffleQuestion, 1);
             next();
 
         };
@@ -181,11 +184,12 @@ function displayQuestion(questionCount) {
                 scoreWrong.textContent =+ scoreMinus;
 
             }
+            QuizBox.splice(schuffleQuestion, 1);
             next();
 
         };
     // submitButton.addEventListener("click", next);
-
+    
     };
 };
 
@@ -193,17 +197,19 @@ function displayQuestion(questionCount) {
 /**
  *  Eventlistener button "next"
  *  to run displayQuestion function
+ *  display and of game message
  */
 
 let alerts = [
     {win: "Congratulations! You have a good football knwoledge!",
     lose: "Sorry you lost, but don't give up!"}
 ];
+
 function next() {
     submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
     questionCount++;
-    if (questionCount==6){
+    if (questionCount==10){
         console.log("end")
         if(scorePlus>scoreMinus){
             gameOver.textContent = alerts[0].win;
