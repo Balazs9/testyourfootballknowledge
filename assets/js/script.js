@@ -8,7 +8,9 @@ var answer1 = document.getElementById("opt0");
 var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
 var answer4 = document.getElementById("opt3");
-var openingGame = document.getElementById("start");
+var openingGame = document.getElementById("starting");
+var endGame = document.getElementById("start");
+var startButton = document.getElementById("startGame");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
@@ -100,23 +102,34 @@ let QuizBox = [
 ];
 
 submitButton.addEventListener("click", beginGame);
+submitButton.style.visibility = "hidden";
+startButton.addEventListener("click", openGame);
 
 
-let opening = [
-    {begin: "Hello, Welcome in Football Quiz!",
-    finish: "New Game!"}
-];
-
+function openGame() {
+    startButton.style.visibility = "hidden";
+    openingGame.style.visibility ="hidden";
+    endGame.style.visibility = "hidden";
+    beginGame();
+}
 function beginGame() {
-    submitButton.style.visibility = "hidden";
-    displayQuestion();
+    if (questionCount<10){
+        submitButton.style.visibility = "hidden";
+        startButton.style.visibility = "hidden";
+        openingGame.style.visibility = "hidden";
+        displayQuestion();
+    }
+    else{
+        submitButton.style.visibility = "visible";
+        startButton.style.visibility = "hidden";
+        openingGame.style.visibility = "hidden";
+        displayQuestion(questionCount);
+    }
 };
 
 function newGame() {
-    submitButton.style.visibility = "visible";
-    scorePlus = 0;
-    scoreMinus = 0;
-    displayQuestion();
+    startButton.style.visibility = "visible";
+    beginGame();
 };
 
 /**
@@ -222,12 +235,15 @@ function next() {
     if (questionCount==10){
         console.log("end")
         if(scorePlus>scoreMinus){
-            openingGame.textContent = alerts[0].win;
-            submitButton.addEventListener("click", beginGame);
+            endGame.textContent = alerts[0].win;
+            endGame.style.visibility = "visible";
+            startButton.addEventListener("click", openGame);
+            
             newGame();
         }
         else{
-            openingGame.textContent = alerts[0].lose;
+            endGame.textContent = alerts[0].lose;
+            endGame.style.visibility = "visible";
             newGame();
         };
         
