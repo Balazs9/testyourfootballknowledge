@@ -11,6 +11,7 @@ var answer4 = document.getElementById("opt3");
 var openingGame = document.getElementById("starting");
 var endGame = document.getElementById("start");
 var startButton = document.getElementById("startGame");
+var resultBox = document.getElementById("result");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
@@ -101,17 +102,26 @@ let QuizBox = [
     }
 ];
 
-submitButton.addEventListener("click", beginGame);
+submitButton.addEventListener("click", newGame);
 submitButton.style.visibility = "hidden";
 startButton.addEventListener("click", openGame);
+resultBox.style.visibility = "hidden";
+endGame.style.visibility = "hidden";
 
 
 function openGame() {
     startButton.style.visibility = "hidden";
     openingGame.style.visibility ="hidden";
+    resultBox.style.visibility = "visible";
     endGame.style.visibility = "hidden";
     beginGame();
 }
+
+
+/** 
+ * begingame function is launching the questions
+ * answers, hiding opening message and new game button
+*/
 function beginGame() {
     if (questionCount<10){
         submitButton.style.visibility = "hidden";
@@ -123,19 +133,22 @@ function beginGame() {
         submitButton.style.visibility = "visible";
         startButton.style.visibility = "hidden";
         openingGame.style.visibility = "hidden";
-        displayQuestion(questionCount);
+        endGame.style.visibility = "visible";
+        displayQuestion();
     }
 };
 
 function newGame() {
-    startButton.style.visibility = "visible";
-    beginGame();
+    openGame();
+    submitButton.style.visibility = "visible";
+    
 };
 
 /**
  *  DisplayQuestion function, displaying the questions,
  *  schuffle them, they will come up in a random order
  *  also checking if the answer is correct or not
+ *  questions are not repeting in the game
  */
 
 function displayQuestion(questionCount) {
@@ -215,13 +228,15 @@ function displayQuestion(questionCount) {
         };
     
     };
+
 };
 
 
 /**
- *  Eventlistener button "next"
+ *  Function next, check if all question`s been answered
  *  to run displayQuestion function
  *  display and of game message
+ *  allerts array with messages for winning or losing.
  */
 
 let alerts = [
@@ -237,26 +252,15 @@ function next() {
         if(scorePlus>scoreMinus){
             endGame.textContent = alerts[0].win;
             endGame.style.visibility = "visible";
-            startButton.addEventListener("click", openGame);
-            
-            newGame();
         }
         else{
             endGame.textContent = alerts[0].lose;
             endGame.style.visibility = "visible";
-            newGame();
         };
-        
+        submitButton.style.visibility = "visible";
+        newGame();
     }
     else{
         console.log("continue")
     };
 };
-
-
-/*
-function endGame() {
-    submitButton.style.visibility = "visible";
-    displayQuestion();
-}
-*/
