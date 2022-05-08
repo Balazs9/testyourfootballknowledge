@@ -1,4 +1,4 @@
-var startingPage = document.getElementById("page");
+var startingPage = document.getElementById("gamestart");
 var questionBox = document.getElementById('questions');
 var submitButton = document.getElementById('submit');
 var scoreCorrect = document.getElementById("score");
@@ -8,7 +8,7 @@ var answer1 = document.getElementById("opt0");
 var answer2 = document.getElementById("opt1");
 var answer3 = document.getElementById("opt2");
 var answer4 = document.getElementById("opt3");
-var gameOver = document.getElementById("endG");
+var openingGame = document.getElementById("start");
 var questionCount = 0;
 var scorePlus = 0;
 var scoreMinus = 0;
@@ -101,11 +101,23 @@ let QuizBox = [
 
 submitButton.addEventListener("click", beginGame);
 
+
+let opening = [
+    {begin: "Hello, Welcome in Football Quiz!",
+    finish: "New Game!"}
+];
+
 function beginGame() {
     submitButton.style.visibility = "hidden";
     displayQuestion();
-}
+};
 
+function newGame() {
+    submitButton.style.visibility = "visible";
+    scorePlus = 0;
+    scoreMinus = 0;
+    displayQuestion();
+};
 
 /**
  *  DisplayQuestion function, displaying the questions,
@@ -205,31 +217,30 @@ let alerts = [
 ];
 
 function next() {
-    submitButton.addEventListener("click", displayQuestion);
     displayQuestion();
     questionCount++;
     if (questionCount==10){
         console.log("end")
         if(scorePlus>scoreMinus){
-            gameOver.textContent = alerts[0].win;
+            openingGame.textContent = alerts[0].win;
+            submitButton.addEventListener("click", beginGame);
+            newGame();
         }
         else{
-            gameOver.textContent = alerts[0].lose;       
-        }
+            openingGame.textContent = alerts[0].lose;
+            newGame();
+        };
         
     }
     else{
         console.log("continue")
     };
-}
+};
+
+
 /*
 function endGame() {
-    if (questionCount==6){
-        gameOver.textContent;
-        beginGame();
-    }
-    else {
-        next();
-    }
+    submitButton.style.visibility = "visible";
+    displayQuestion();
 }
 */
