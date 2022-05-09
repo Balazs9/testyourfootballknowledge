@@ -102,7 +102,7 @@ let QuizBox = [
     }
 ];
 
-submitButton.addEventListener("click", newGame);
+submitButton.addEventListener("click", beginGame);
 submitButton.style.visibility = "hidden";
 startButton.addEventListener("click", openGame);
 resultBox.style.visibility = "hidden";
@@ -139,9 +139,8 @@ function beginGame() {
 };
 
 function newGame() {
-    openGame();
     submitButton.style.visibility = "visible";
-    
+    beginGame();
 };
 
 /**
@@ -257,7 +256,6 @@ function next() {
             endGame.textContent = alerts[0].lose;
             endGame.style.visibility = "visible";
         };
-        submitButton.style.visibility = "visible";
         newGame();
     }
     else{

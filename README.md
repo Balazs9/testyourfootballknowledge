@@ -88,9 +88,21 @@ Functionality requrimenets:
 
 1. Existing features
 
-![game](assets/images/main.png)
+- opening page
+
+![game](assets/images/frontpage.png)
+
+- scoreboard, where is counting the correct and incorrect answers
+
+![score](assets/images/scoreboard.png)
+
+- endgame where scores and a message is showing either is a winnig or a losing message
+
+![end](assets/images/endgame.png)
 
 2. Features to implement
+
+- new game after finishing the game, right now restart only works with the play button
 
 - player can give their name
 
@@ -101,6 +113,8 @@ Functionality requrimenets:
 During the development what needed to be fixed:
 
 - The game area was not responding as expected, after the questions and answers displayed the next question did not work. Searching for the problem in the code institue javascript concepts lesson, i found the Math.floor(Math.random) built in function, what was helping to schuffle my questions and i could iterate through questions.
+
+- To stop the infinite game i used the splice method to remove the answered question from the array.
 
 ## Technologies
 
