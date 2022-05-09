@@ -92,17 +92,17 @@ Functionality requrimenets:
 
 ![game](assets/images/frontpage.png)
 
-- scoreboard, where is counting the correct and incorrect answers
+- scoreboard, where is counting the correct and incorrect answers, giving feedback by showing in adding 1 to either Correct or Wrong answers. The game will show 10 questions in a random selections, without repeating them, after we gave 10 answers we will get to endgame.
 
 ![score](assets/images/scoreboard.png)
 
-- endgame where scores and a message is showing either is a winnig or a losing message
+- endgame where scores and a message is showing either is a winnig or a losing message, then we will get feedback, with either a congratulations message or a sorry.
 
 ![end](assets/images/endgame.png)
 
 2. Features to implement
 
-- new game after finishing the game, right now restart only works with the play button
+- new game function after finishing the game, right now restart only works with the play button in navbar.
 
 - player can give their name
 

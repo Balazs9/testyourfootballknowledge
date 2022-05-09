@@ -122,6 +122,8 @@ function openGame() {
  * begingame function is launching the questions
  * answers, hiding opening message and new game button
 */
+
+
 function beginGame() {
     if (questionCount<10){
         submitButton.style.visibility = "hidden";
@@ -134,13 +136,12 @@ function beginGame() {
         startButton.style.visibility = "hidden";
         openingGame.style.visibility = "hidden";
         endGame.style.visibility = "visible";
-        displayQuestion();
+        newGame();
     }
 };
 
 function newGame() {
     submitButton.style.visibility = "visible";
-    beginGame();
 };
 
 /**
@@ -159,12 +160,10 @@ function displayQuestion(questionCount) {
         
         answer1.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[0]){
-                console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
             }
             else{
-                console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
 
@@ -175,12 +174,10 @@ function displayQuestion(questionCount) {
         
         answer2.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[1]){
-                console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
             }
             else{
-                console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
 
@@ -192,13 +189,11 @@ function displayQuestion(questionCount) {
         
         answer3.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[2]){
-                console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
 
             }
             else{
-                console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
 
@@ -210,13 +205,11 @@ function displayQuestion(questionCount) {
         
         answer4.onclick = function() {
             if(QuizBox[schuffleQuestion].correctAnswer==QuizBox[schuffleQuestion].answers[3]){
-                console.log("good");
                 scorePlus++;
                 scoreCorrect.textContent =+ scorePlus;
 
             }
             else{
-                console.log("wrong");
                 scoreMinus++;
                 scoreWrong.textContent =+ scoreMinus;
 
@@ -247,7 +240,6 @@ function next() {
     displayQuestion();
     questionCount++;
     if (questionCount==10){
-        console.log("end")
         if(scorePlus>scoreMinus){
             endGame.textContent = alerts[0].win;
             endGame.style.visibility = "visible";
@@ -259,6 +251,5 @@ function next() {
         newGame();
     }
     else{
-        console.log("continue")
     };
 };
